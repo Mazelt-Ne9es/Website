@@ -1,0 +1,31 @@
+type Player {
+  id: ID!
+  name: String!
+  position: String!
+  number: Int!
+  photo: String!
+  height: String!
+  weight: String!
+  age: Int!
+  nationality: String!
+  goals: Int!
+  assists: Int!
+  tackles: Int!
+  passes: Int!
+  rating: Float!
+  matchHistory: [MatchHistory!]!
+}
+
+type MatchHistory {
+  id: ID!
+  date: String!
+  opponent: String!
+  goals: Int!
+  assists: Int!
+  rating: Float!
+}
+
+type Query {
+  players: [Player!]!
+  player(id: ID!): Player
+}

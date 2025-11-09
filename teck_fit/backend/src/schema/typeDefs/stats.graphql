@@ -1,0 +1,27 @@
+type Stats {
+  team: TeamStats!
+  topScorers: [TopPlayer!]!
+  topAssists: [TopPlayer!]!
+  form: [String!]!
+}
+
+type TeamStats {
+  matches: Int!
+  wins: Int!
+  draws: Int!
+  losses: Int!
+  goalsFor: Int!
+  goalsAgainst: Int!
+  cleanSheets: Int!
+}
+
+type TopPlayer {
+  id: ID!
+  name: String!
+  goals: Int
+  assists: Int
+}
+
+type Query {
+  stats: Stats!
+}
